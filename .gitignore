@@ -1,0 +1,15 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+venv/
+env/
+*.env
+
+# Django
+*.log
+
+# Docker
+.dockerignore
+postgres_data/
