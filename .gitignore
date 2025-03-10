@@ -10,6 +10,9 @@ env/
 # Django
 *.log
 
+.idea
+*.idea
+
 # Docker
 .dockerignore
 postgres_data/

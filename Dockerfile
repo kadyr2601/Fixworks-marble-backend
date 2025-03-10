@@ -1,17 +1,18 @@
 FROM python:3.12
 
+
+RUN apt-get update && apt-get install -y build-essential
+
 WORKDIR /app
-
-RUN apt-get update && apt-get install -y \
-    gcc \
-    python3-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY req.txt .
-RUN pip install --no-cache-dir -r req.txt
 
 COPY . .
 
-EXPOSE 8000
+RUN python -m venv venv
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend_config.wsgi:application"]
+CMD ["source", "venv/bin/activate"]
+
+RUN pip install --upgrade pip
+
+RUN pip install -r req.txt
+
+RUN python manage.py collectstatic --noinput
