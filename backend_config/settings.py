@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-$zktsxmc5*4j+_zb-%9_ew)&asvypr30*6$n_rx0v@j2sub1ky
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["213.109.202.246",]
+ALLOWED_HOSTS = ["213.109.202.246", "fixworks-marble.com", "www.fixworks-marble.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -95,11 +95,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5000",
-    "http://213.109.202.246",
-    "https://213.109.202.246",
+    "http://fixworks-marble.com",
+    "http://www.fixworks-marble.com",
+    "https://fixworks-marble.com",
+    "https://www.fixworks-marble.com",
 ]
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5000',
-    'http://213.109.202.246',
+    "http://fixworks-marble.com",
+    "http://www.fixworks-marble.com",
+    "https://fixworks-marble.com",
+    "https://www.fixworks-marble.com",
 ]
